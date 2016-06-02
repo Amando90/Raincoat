@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag    'index', media: 'all' %>
+<p id="notice"><%= notice %></p>
+
+<center>
+	<%= image_tag @post.image.url( :large ) %>
+
+	<p>
+	  <strong>Caption:</strong>
+	  <%= @post.caption %>
+	</p>
+
+	<% if @post.user.id == current_user.id %>
+		<div class="text-center edit-links">
+			<%= link_to "Cancel", posts_path %>
+			|
+			<%= link_to "Edit Post", edit_post_path(@post) %>
+		</div>
+	<% else %>
+		<div class="text-center edit-links">
+			<%= link_to "Cancel", posts_path %>
+		</div>
+	<% end %>
+</center>

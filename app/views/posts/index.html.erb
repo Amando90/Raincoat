@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag    'index', media: 'all' %>
+
+<p id="notice"><%= notice %></p>
+
+<% @posts.each do |post| %>
+  <%= render 'post', post: post %>
+<% end %>
